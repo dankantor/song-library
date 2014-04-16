@@ -59,7 +59,7 @@ SongLibrary.prototype.get = function(name, version){
     else{
         var songs = storage.get('songLibrary_' + this.dbName + '_' + this.dbVersion);
         if(songs !== null){
-            this.songList = JSON.parse(songs);
+            this.songList = songs;
             this.genres = new GenresLS(this.songList);
             this.artists = new ArtistsLS(this.songList);
             this.albums = new AlbumsLS(this.songList);
@@ -163,6 +163,10 @@ SongLibrary.prototype.write = function(songs){
             'songLibrary_' + this.dbName + '_' + this.dbVersion, 
             this.songList
         );
+        this.genres = new GenresLS(this.songList);
+        this.artists = new ArtistsLS(this.songList);
+        this.albums = new AlbumsLS(this.songList);
+        this.songs = new SongsLS(this.songList);
         deferred.resolve();
     }
     return deferred.promise();
