@@ -1,0 +1,19 @@
+{
+  "author": "Dan Kantor <dan@ex.fm>",
+  "name": "song-library",
+  "description": "",
+  "version": "0.0.1",
+  "homepage": "https://github.com/dankantor/song-library",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dankantor/song-library.git"
+  },
+  "dependencies": {
+      "local-storage-json": "0.0.1",
+      "underscore": "1.6.0"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
